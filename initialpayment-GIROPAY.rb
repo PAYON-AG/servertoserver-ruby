@@ -4,7 +4,7 @@ require 'net/https'
 require 'uri'
 require 'json'
  
-def initialPayments()
+def initialPayment()
 	uri = URI('https://test.oppwa.com/v1/payments')
 	http = Net::HTTP.new(uri.host, uri.port)
 	http.use_ssl = true
@@ -25,4 +25,4 @@ def initialPayments()
 	return JSON.parse(http.request(req).body)
 end
 
-puts initialPayments()
+puts initialPayment()
